@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #design-added{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight:bold;
+        }
+        .design{
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="design-added">1</div>
+
+    <script>
+        const input = document.querySelector('#design-added');
+
+        function addTotal(numberField){
+            numberField.innerText = Number(numberField.innerText) + 1;
+        }
+
+        function eventfunction(e){
+            const target = e.target;
+            if(e.type === 'click'){
+                addTotal(target);
+            }
+            else if(e.type === 'mouseover'){
+                input.classList.add('design');
+            }
+            else{
+                input.classList.remove('design');
+            }
+           
+            
+        }
+
+        input.addEventListener('click', eventfunction);
+        input.addEventListener('mouseover', eventfunction);
+        input.addEventListener('mouseout', eventfunction);
+
+    </script>
+
+
+</body>
+</html>
